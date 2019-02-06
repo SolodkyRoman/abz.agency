@@ -1,7 +1,7 @@
 {
-  "main.css": "/abz.agency/static/css/main.a22afb00.chunk.css",
-  "main.js": "/abz.agency/static/js/main.585277af.chunk.js",
-  "main.js.map": "/abz.agency/static/js/main.585277af.chunk.js.map",
+  "main.css": "/abz.agency/static/css/main.a2664e88.chunk.css",
+  "main.js": "/abz.agency/static/js/main.9840818e.chunk.js",
+  "main.js.map": "/abz.agency/static/js/main.9840818e.chunk.js.map",
   "static/js/1.766a31b0.chunk.js": "/abz.agency/static/js/1.766a31b0.chunk.js",
   "static/js/1.766a31b0.chunk.js.map": "/abz.agency/static/js/1.766a31b0.chunk.js.map",
   "runtime~main.js": "/abz.agency/static/js/runtime~main.28f139f4.js",
@@ -27,8 +27,8 @@
   "static/media/instagram.svg": "/abz.agency/static/media/instagram.f263dbf1.svg",
   "static/media/twitter.svg": "/abz.agency/static/media/twitter.3e993ec3.svg",
   "static/media/pinterest.svg": "/abz.agency/static/media/pinterest.603e7eb0.svg",
-  "static/css/main.a22afb00.chunk.css.map": "/abz.agency/static/css/main.a22afb00.chunk.css.map",
+  "static/css/main.a2664e88.chunk.css.map": "/abz.agency/static/css/main.a2664e88.chunk.css.map",
   "index.html": "/abz.agency/index.html",
-  "precache-manifest.f1eec15b955dc1735abe8ce45b490dfe.js": "/abz.agency/precache-manifest.f1eec15b955dc1735abe8ce45b490dfe.js",
+  "precache-manifest.5682c0e69a8751e9148fdb4ea0f7a2dc.js": "/abz.agency/precache-manifest.5682c0e69a8751e9148fdb4ea0f7a2dc.js",
   "service-worker.js": "/abz.agency/service-worker.js"
 }
