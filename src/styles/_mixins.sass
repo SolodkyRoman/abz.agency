@@ -1,0 +1,60 @@
+// Breakpoints
+// Extra small devices, smartphones
+$screen-xsm-max: 320px
+    
+// Small devices
+$screen-sm-max: 576px
+
+// Small tablets and large smartphones (landscape view)
+$screen-md-max: 768px
+
+// Small tablets (portrait view)
+$screen-lg-max: 992px
+
+// Tablets and small desktops
+$screen-xlg-max: 1200px
+
+// Extra large devices
+$screen-xxlg-min: 1201px
+
+// Extra small devices, smartphones (320)
+@mixin xsm  
+   @media (max-width: #{$screen-xsm-max}) 
+       @content;
+   
+
+// Small devices (576)
+@mixin small 
+   @media (max-width: #{$screen-sm-max}) 
+       @content;
+   
+
+// Small tablets and large smartphones (landscape view) (768)
+@mixin medium 
+   @media (max-width: #{$screen-md-max}) 
+       @content;
+   
+
+// Small tablets (portrait view) (992)
+@mixin tablet 
+   @media (max-width: #{$screen-lg-max}) 
+       @content;
+   
+
+// Tablets and small desktops (1200)
+@mixin desktop
+   @media (max-width: #{$screen-xlg-max}) 
+       @content;
+   
+
+// (1201)
+@mixin fullhd
+   @media (min-width: #{$screen-xxlg-min}) 
+       @content;
+
+
+// Custom devices
+@mixin rwd($screen) 
+   @media (max-width: $screen+'px') 
+       @content;
+   

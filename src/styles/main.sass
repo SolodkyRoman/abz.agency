@@ -1,0 +1,1085 @@
+@import reset
+@import mixins
+@import fonts
+@import variables
+body 
+    font-family: 'Source Sans Pro', sans-serif
+    color: $grey-text
+    background-color: #fff
+    font-size: 16px
+
+h1, h2, h3
+    font-family: Overpass, sans-serif
+    font-weight: 600
+    color: #000
+
+h2 
+    font-size: 42px
+    text-align: center   
+    @include medium
+        font-size: 26px
+
+.mobile-menu
+    position: fixed
+    left: 0
+    top: 0
+    z-index: 20
+    display: flex
+    flex-direction: column
+    height: 100vh
+    width: 260px
+    transform: translateX(-100%)
+    background: #fff
+    transition: all 0.2s
+    &.active
+        transform: translateX(0)
+    @include small
+        width: 250px
+
+    .mobile-menu__header 
+        border-bottom: 1px solid #e1e1e1
+        padding: 30px 0 27px 24px
+        @include small
+            padding: 29px 0 26px 15px
+
+        .mobile-menu__header__avatar
+            width: 67px
+            height: 67px
+            border-radius: 50%
+            display: inline
+        
+        .mobile-menu__header__name
+            margin-top: 13px
+            font-size: 20px
+            color: #000
+            @include small
+                margin-top: 15px
+
+        .mobile-menu__header__email
+            color: #8d8c8c
+            font-size: 13px
+            margin-top: 7px
+    
+    .mobile-menu__nav
+        margin-top: 19px
+        ul
+            li
+                a
+                    height: 43px
+                    display: flex
+                    align-items: center
+                    padding-left: 24px
+                    text-decoration: none
+                    font-size: 16px
+                    color: #000 
+                    &:hover
+                        background-color: #eee
+                    @include small
+                        padding-left: 15px
+
+.modal-alert
+    position: fixed
+    width: 290px
+    min-height: 178px
+    background: #fff
+    left: calc(50% - 145px)
+    top: calc(50% - 96px)
+    border-radius: 3px
+    padding: 21px 24px 15px 24px
+    box-sizing: border-box
+    color: #000
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+    .modal-alert__heading
+        font-size: 23px
+    .modal-alert__text
+        margin-top: 11px
+        line-height: 1.3
+        font-size: 16px
+    .button
+        height: auto
+        color: $orange
+        align-self: flex-end
+        margin-top: 37px
+        &:hover
+            color: $orange-hover
+        
+.page-hover
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100vh
+    z-index: 10
+    display: none
+    background: rgba(0, 0, 0, 0.4)
+    &.active
+        display: block
+
+.flex 
+    display: flex
+
+.button 
+    outline: none
+    cursor: pointer
+    padding: 0
+    background: none
+    border: none
+    font-weight: 700
+    font-size: 20px
+    height: 40px
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    border-radius: 3px
+    text-decoration: none
+    font-family: 'Source Sans Pro'
+
+.text-center 
+    text-align: center
+
+.container 
+    margin: 0 auto
+    padding: 0 15px
+    max-width: 1170px
+    box-sizing: border-box
+    @include desktop
+        max-width: 930px
+        padding: 0
+    @include tablet
+        max-width: 720px
+    @include medium
+        width: 100%
+        padding: 0 15px
+
+.tooltip
+    display: none
+    position: fixed
+    overflow: hidden
+    background: #707070
+    padding: 8px 10px
+    font-size: 13px
+    font-family: 'Source Sans Pro'
+    font-weight: 400
+    box-shadow: 0 0 3px rgba(0,0,0,0.5)
+    z-index: 5
+
+.desktop-header
+    @include tablet
+        display: none
+
+.mobile-header
+    display: none
+    height: 64px
+    @include tablet
+        display: block
+
+    .container
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+        .mobile-header__logo
+            div
+                height: 24px
+
+                svg 
+                    height: 24px
+                    width: 134px
+        
+        .mobile-header__menu
+            background: #fff
+            height: auto
+            div
+                height: 22px
+                width: 23px
+                svg 
+                    height: 22px
+                    width: 23px
+            &:hover
+                svg
+                    path
+                        fill: #2638bb
+
+.header 
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    background: #fff
+    font-family: 'Source Sans Pro'
+    z-index: 3
+    background: #fff
+
+    .header__content
+        height: 64px
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-between
+
+        .header__logo 
+            display: inline-block
+
+            div
+                height: 24px
+
+                svg 
+                    height: 24px
+                    width: 134px
+
+        .header__navigation__list
+            list-style-type: none
+            padding: 0
+            margin: 0
+            display: flex
+
+            li
+                margin: 0 0 0 29px
+                line-height: 1
+
+                &:first-child
+                    margin: 0
+
+                a
+                    text-decoration: none
+                    color: #000
+                    font-size: 16px
+                    display: inline-block
+                    height: 17px
+                    transition: all 0.1s
+                    &:hover
+                        color: $orange
+                
+    .account
+        display: flex
+        flex-direction: row
+        align-items: center
+
+        .account__info 
+            text-align: right
+            height: 29px
+            display: flex
+            justify-content: space-between
+            flex-direction: column
+
+            .account__info__name
+                font-size: 14px
+            
+            .account__infot__email 
+                font-size: 12px
+                padding-right: 2px
+                color: #8d8c8c
+
+        .account__avatar 
+            display: inline-block
+            height: 40px
+            width: 40px
+            border-radius: 50%
+            overflow: hidden
+            margin: 0 16px 0 11px
+
+            img
+                display: inline-block
+                width: 100%
+
+        .account__exit-btn
+            background: none
+            border: none
+            padding: 0
+            outline: none
+            cursor: pointer
+        
+            div
+                height: 20px
+
+            svg 
+                height: 20px
+                width: 24px
+        &:hover
+            svg
+                path
+                    fill: #2638bb
+
+.banner
+    margin-top: 64px
+    min-height: 675px
+    height: calc(100vh - 64px)
+    background: url(../images/bg-1.jpg)
+    background-position: center 
+    background-repeat: no-repeat
+    background-size: cover
+    display: flex
+    align-items: center
+    @include tablet
+        height: 622px
+        min-height: 0
+    @include medium
+        height: 393px
+        min-height: 0
+        text-align: center
+
+    .flex
+        @include medium
+            justify-content: center
+
+    .banner__content
+        color: #fff
+        flex: 0 1 480px
+        @include tablet
+            flex-basis: 410px
+
+        h1
+            color: #fff
+            line-height: 1.21
+            margin-top: -7px
+            font-size: 50px
+            @include tablet
+                font-size: 42px
+            @include medium
+                font-size: 30px
+
+        p   
+            font-size: 20px
+            margin-top: 17px
+            line-height: 1.3
+            @include tablet
+                font-size: 18px
+                margin-top: 20px
+            @include medium
+                font-size: 16px
+                margin-top: 9px
+                span
+                    display: none
+
+        .button
+            background-color: $orange
+            color: #fff
+            width: 290px
+            margin-top: 37px
+            &:hover 
+                background-color: $orange-hover
+            @include tablet
+                margin-top: 39px
+            @include medium
+                margin-top: 39px
+
+.about
+    background: #fff
+    padding: 140px 0 75px 0
+    @include desktop
+        padding-bottom: 124px
+    @include tablet
+        padding-top: 119px
+        padding-bottom: 128px
+    @include medium
+        padding-top: 69px
+        text-align: center
+        padding-bottom: 59px
+
+    .about__heading
+        @include desktop
+            font-size: 41px
+        @include medium
+            font-size: 26px
+
+    .about__content
+        display: flex
+        margin-top: 51px
+        @include desktop
+            margin-top: 14px
+        @include medium
+            flex-direction: column
+            margin-top: 28px
+        
+        .about__content__image
+            flex-basis: 363px
+            text-align: center
+            @include desktop
+                flex-basis: 292px
+            @include tablet
+                flex-basis: 220px
+            svg 
+                width: 220px
+                @include medium
+                    height: 218px
+
+        .about__content__info
+            flex: 1 1 
+            padding-left: 29px
+            @include medium
+                padding-left: 0
+
+            .about__content__info__heading
+                font-size: 26px
+                @include desktop
+                    margin-top: 23px
+                @include tablet
+                    margin-top: 34px
+                @include medium
+                    margin-top: 25px
+                    line-height: 1.1
+                    text-align: center
+                    font-size: 23px
+                    width: 200px
+                    display: inline-block
+
+            .about__content__info__p
+                color: $grey-text
+                font-size: 16px
+                line-height: 1.375
+                margin: 23px 0 6px 0
+                @include desktop
+                    margin-bottom: 14px
+                
+                &:first-of-type
+                    margin: 10px 0 0 0
+                    @include tablet
+                        margin-top: 14px
+                    @include medium
+                        margin-top: 14px
+
+            .about__content__info__btn 
+                background: #fff
+                color: $orange
+                font-size: 22px
+                &:hover
+                    color: $orange-hover
+
+.relations 
+    padding-bottom: 144px
+    @include desktop
+        padding-bottom: 141px
+    @include tablet
+        padding-bottom: 122px
+    @include medium
+        padding-bottom: 75px
+
+    .relations__heading
+        line-height: 1.2
+        width: 555px
+        margin: 0 auto 45px auto
+        @include medium
+            width: auto
+            margin-bottom: 29px
+
+    .flex
+        flex-direction: row
+        @include tablet
+            flex-direction: column
+
+    .relations__skill
+        margin-left: 31px
+        flex: 1
+        &:first-child
+            margin: 0
+        @include tablet
+            display: flex
+            margin-left: 0
+            padding: 0 60px
+            margin-top: 47px
+        @include medium
+            flex-direction: column
+            align-items: center
+            padding: 0
+            margin-top: 30px
+
+        svg
+            height: 110px
+            width: 98px
+            @include tablet
+                width: 96px
+                height: 100px
+
+        .relations__skill__info
+            @include tablet
+                margin-left: 31px
+            @include medium
+                margin-left: 0
+                text-align: center
+                margin-top: 11px
+
+        .relations__skill__heading
+            margin: 26px 0 10px 0
+            font-size: 26px
+            @include tablet
+                margin-top: 0
+                margin-bottom: 7px
+            @include medium
+                font-size: 22px
+                display: inline-block
+                margin-bottom: 5px
+        
+        .relations__skill__text
+            color: $grey-text
+            font-size: 16px
+            line-height: 1.375
+            @include medium
+                width: 280px
+
+.requirements
+    padding: 137px 0 100px 0
+    background: url(../images/bg-2.jpg)
+    background-position: center 
+    background-repeat: no-repeat
+    background-size: cover
+    color: #fff
+    @include desktop
+        padding-bottom: 151px
+    @include tablet
+        padding-top: 115px
+        padding-bottom: 100px
+    @include medium
+        text-align: center
+        padding-top: 66px
+        padding-bottom: 46px
+
+    .flex
+        @include tablet
+            margin-top: 37px
+        @include medium
+            flex-direction: column-reverse
+            margin-top: 0
+
+    .requirements__heading
+        margin-bottom: 44px
+        color: #fff
+        @include tablet
+            width: 470px
+            margin: 0 auto
+            line-height: 1.2
+        @include medium
+            width: 290px
+
+    .requirements__text
+        width: 50%
+        @include tablet
+            width: calc(50% - 15px)
+        @include medium
+            width: 100%
+            margin-top: 22px
+
+        .requirements__text__p
+            line-height: 1.375em
+            margin-bottom: 24px
+    
+    .requirements__picture
+        text-align: center
+        width: 50%
+        @include tablet
+            width: calc(50% - 15px)
+        @include medium
+            width: 100%
+
+        .v2
+            display: none
+            padding: 4px 0 0 32px
+            @include tablet
+                display: block
+            @include medium
+                display: none
+
+        .v1
+            padding: 4px 0 0 19px
+            @include desktop
+                padding: 17px 0 0 37px
+            @include tablet
+                display: none
+                svg
+                    width: 100%
+            @include medium
+                display: block
+                padding: 0
+                width: 100%
+                margin-top: 25px
+                svg
+                    height: 217px
+            
+            
+.users 
+    padding-top: 140px
+    @include tablet
+        padding-top: 119px
+    @include medium
+        padding-top: 70px
+        text-align: center
+
+    .users__attention
+        margin-top: 20px
+        font-size: 18px
+        @include medium
+            margin-top: 16px
+            display: inline-block
+            width: 170px
+            line-height: 1.35
+            font-size: 16px
+
+    .flex
+        flex-wrap: wrap
+        @include small
+            flex-direction: column
+            align-items: center 
+
+    .users__person
+        margin: 59px 30px 0 0
+        flex: 1 0 calc(33.3% - 60px)
+        max-width: 360px
+        display: flex
+        overflow: hidden
+        &:nth-child(3n)
+            margin-right: 0
+        @include desktop
+            max-width: 290px
+        @include tablet
+            flex-direction: column
+            margin-top: 41px
+            max-width: 220px
+        @include medium
+            flex-basis: calc(50% - 60px)
+            max-width: 50%
+            margin-right: 0
+        @include small
+            max-width: 100%
+            margin-right: 0
+            margin-top: 29px
+            line-height: 1.4
+
+        .users__person__avatar
+            display: flex
+            flex-basis: 70px
+            flex-shrink: 0
+            border-radius: 50%
+            overflow: hidden
+            height: 70px
+            @include tablet
+                width: 70px
+                margin: 0 auto
+            
+            img
+                display: inline-block
+                width: 100%
+                object-fit: cover
+        
+        .users__person__info
+            flex: 1
+            margin: 24px 0 0 10px
+            color: $grey-text
+            font-size: 14px
+            @include tablet
+                margin: 12px 0 0 0
+                text-align: center
+
+            .users__person__info__name
+                font-size: 22px
+                font-weight: 700
+                margin-bottom: 9px
+                line-height: 1.2
+                position: relative   
+                cursor: default
+                &:hover
+                    .tooltip
+                        display: inline-block
+                        color: #fff
+                @include tablet
+                    text-align: center
+                    margin-bottom: 4px
+                @include small
+                    line-height: 1.3
+                    display: inline-block
+                    width: 240px
+            
+            .users__person__info__p
+                line-height: 1.3
+                position: relative
+                &:hover
+                    .tooltip
+                        display: inline-block
+                        color: #fff
+                @include medium
+                    line-height: 1.37
+
+    .users__show-more
+        color: $orange
+        border: 2px solid $orange
+        margin-top: 56px
+        width: 290px
+        &:hover 
+            background: #fee6d2
+            color: #fc831f
+
+.signup
+    background: #fff
+    padding-top: 158px
+    @include tablet
+        padding-top: 139px
+    @include medium
+        padding-top: 70px
+        text-align: center
+
+    .signup__attention
+        margin-top: 20px
+        font-size: 18px
+        @include tablet
+            margin: 28px auto 0 auto
+            line-height: 1.2
+            width: 370px
+        @include medium
+            margin-top: 16px
+            display: inline-block
+            width: 200px
+            font-size: 16px
+            width: 300px
+            line-height: 1.35
+    
+    .signup__form
+        margin-top: 64px
+        @include tablet
+            margin-top: 51px
+        @include medium
+            margin-top: 31px
+    
+        .signup__form__inputs
+            width: 100%
+            display: flex
+            flex-direction: row
+            &:nth-child(2)
+                margin-top: 23px
+            @include medium
+                flex-direction: column
+                &:nth-child(2)
+                    margin-top: 0
+
+            .signup__label
+                position: relative
+                flex: 1 0 calc(33.3% - 30px)
+                margin-left: 30px
+                &:first-of-type
+                    margin: 0
+                @include medium
+                    margin: 0 0 18px 0
+                    &:first-of-type
+                        margin: 0 0 18px 0
+                    
+                .signup__input__heading
+                    position: absolute
+                    left: 14px
+                    top: -5px
+                    display: inline-block
+                    background: #fff
+                    padding: 0 4px
+                    font-size: 12px
+                    color: #8d8c8c
+
+                .signup__input__field
+                    outline: none
+                    font-family: 'Source Sans Pro', sans-serif
+                    font-size: 16px
+                    color: #8d8c8c
+                    width: 100%
+                    height: 56px
+                    border-radius: 4px
+                    border: 1px solid #b7b7b7
+                    padding: 0 17px 0 17px
+                    box-sizing: border-box
+                    &:enabled
+                        color: #000
+                    &:focus
+                        border: 2px solid #8d8c8c
+
+            .signup__input__error
+                font-size: 12px
+                color: $error-red
+                margin: 5px 0 0 18px
+                height: 12px
+
+            .signup__label.error
+                .signup__input__heading
+                    color: $error-red
+                .signup__input__field
+                    border-color: $error-red
+                    &:focus
+                        border: 2px solid $error-red
+
+            .signup__label__file
+                flex: 1 0 calc(50% - 15px)
+                margin-left: 30px
+                border: 1px solid #b7b7b7
+                border-radius: 3px
+                box-sizing: border-box
+                display: flex
+                align-items: center
+                padding: 0 0 0 17px 
+                height: 56px
+                @include medium
+                    margin-left: 0
+                    margin-top: 35px
+
+            .signup__label__file.error
+                border-color: $error-red
+
+            .signup__select__outer
+                flex-grow: 1
+                flex-shrink: 0
+                flex-basis: calc(50% - 15px)
+                width: 100%
+                position: relative
+                height: 56px
+                
+                div 
+                    position: absolute
+                    right: 12px
+                    top: calc(50% - 4px)
+                    height: 9px
+                    width: 16px
+                    @include desktop
+                        right: 20px
+                    @include tablet
+                        right: 13px
+
+                    div 
+                        right: 0
+                        svg 
+                            position: absolute
+                            top: 0
+                            left: 0
+                           
+            .signup__select
+                flex: 1 0 calc(50% - 15px)
+                outline: none
+                font-family: 'Source Sans Pro', sans-serif
+                font-size: 16px
+                color: #8d8c8c
+                width: 100%
+                height: 56px
+                border-radius: 4px
+                border: 1px solid #b7b7b7
+                padding: 0 17px 0 17px
+                box-sizing: border-box
+                -webkit-appearance: none
+                -moz-appearance: none
+                appearance: none
+                background: #fff
+                &:enabled
+                    color: #000
+                &:focus
+                    border: none  
+                    box-shadow: 0 0 10px rgba(0,0,0,0.5)
+                
+                option
+                    height: 56px
+
+            .signup__select.error 
+                border-color: $error-red
+
+            input[type="file"]
+                display: none
+
+            .signup__input__filebtn
+                background: #fff
+                z-index: 1
+                position: absolute
+                right: -1px
+                top: -1px
+                border: 2px solid $orange
+                border-radius: 0 3px 3px 0
+                height: 56px
+                width: 130px
+                color: $orange
+                &:hover 
+                    background: #fee6d2
+                .upload__icon
+                    display: none
+                    div
+                        width: 20px
+                        height: 24px
+                    @include medium
+                        display: inline-block
+                @include medium
+                    width: 55px
+                    .upload__word
+                        display: none
+
+        .signup__form__submit
+            width: 290px
+            margin-top: 43px
+            background: $orange
+            color: #fff
+            &:hover
+                background: #fc831f
+            &:disabled
+                color: #8d8c8c
+                background: #d7d7d7
+            @include desktop
+                margin-top: 60px
+            @include medium
+                margin-top: 45px
+
+footer 
+    color: #fff
+    padding: 28px 0 30px 0
+    margin-top: 149px   
+    background-color: $blue
+    @include desktop
+        margin-top: 139px
+        padding-top: 29px
+    @include tablet
+        margin-top: 120px
+    @include medium
+        margin-top: 71px
+        text-align: center
+        padding-top: 32px
+        padding-bottom: 21px
+
+    .footer__line
+        display: block
+        max-width: 1140px
+        height: 1px
+        margin: 0 auto
+        background: #5f5fc4
+
+    .footer__row
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        @include medium
+            flex-direction: column
+        &.first
+            padding-bottom: 32px
+            align-items: center
+            @include medium
+                padding-bottom: 22px
+        &.second
+            padding-top: 26px
+        &.third
+            margin-top: 13px 
+            align-items: center
+            @include desktop
+                align-items: flex-end
+                margin-top: 13px
+            @include tablet
+                margin-top: 9px
+            @include medium
+                flex-direction: column-reverse
+                align-items: center
+                justify-content: center
+                margin-top: 12px
+
+        .footer__logo
+            div
+                height: 24px
+
+                svg
+                    width: 134px
+                    height: 24px
+
+                    path
+                        fill: #fff !important
+
+        .footer__link
+            text-decoration: none
+            color: #fff
+            display: inline-block
+            &:hover
+                color: $orange
+                     
+        .footer__nav
+            display: flex
+            @include medium
+                flex-direction: column
+                margin-top: 17px
+
+            li
+                margin-left: 30px
+                @include medium
+                    margin-left: 0
+                    margin-bottom: 10px
+
+        .footer__contacts
+            display: flex
+            flex-direction: column
+
+            li 
+                margin-bottom: 18px
+                @include tablet
+                    margin-bottom: 28px
+                @include medium
+                    margin-bottom: 18px
+
+            .footer__link
+                font-size: 20px
+                display: flex
+                @include medium
+                    justify-content: center
+
+                div
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    height: 26px
+                    width: 26px
+                    text-align: center
+                    @include tablet
+                        display: none
+                    div
+                        display: inline-block
+                        width: auto
+                        height: auto
+                    svg 
+                        max-width: 26px
+                        max-height: 26px
+
+                span 
+                    margin-left: 8px
+                    @include tablet
+                        font-size: 18px
+                        margin: 0
+        
+        .footer__links
+            display: flex
+            flex-direction: row
+            @include medium
+                display: none
+
+            .footer__links__list
+                display: flex
+                flex-direction: column
+                margin-left: 122px  
+                @include desktop
+                    margin-left: 87px
+                @include tablet
+                    margin-left: 52px
+
+                li
+                    text-align: right
+                    margin-bottom: 14px
+
+        .footer__socials
+            display: flex
+
+            li
+                margin-left: 20px
+                @include medium
+                    margin: 0 10px
+
+            a
+                div, svg
+                    width: 26px
+                    height: 26px
+                path
+                    transition: all 0.1s
+                &:hover
+                    path
+                        fill: $orange
+        
+        .footer__copy
+            font-size: 12px
+            margin-bottom: 2px
+            @include desktop
+                margin-bottom: 1px
+            @include tablet
+                margin-bottom: 10px
+            @include medium
+                margin: 18px 0 10px 0
