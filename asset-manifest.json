@@ -1,7 +1,7 @@
 {
   "main.css": "/abz.agency/static/css/main.a22afb00.chunk.css",
-  "main.js": "/abz.agency/static/js/main.e4109f76.chunk.js",
-  "main.js.map": "/abz.agency/static/js/main.e4109f76.chunk.js.map",
+  "main.js": "/abz.agency/static/js/main.585277af.chunk.js",
+  "main.js.map": "/abz.agency/static/js/main.585277af.chunk.js.map",
   "static/js/1.766a31b0.chunk.js": "/abz.agency/static/js/1.766a31b0.chunk.js",
   "static/js/1.766a31b0.chunk.js.map": "/abz.agency/static/js/1.766a31b0.chunk.js.map",
   "runtime~main.js": "/abz.agency/static/js/runtime~main.28f139f4.js",
@@ -29,6 +29,6 @@
   "static/media/pinterest.svg": "/abz.agency/static/media/pinterest.603e7eb0.svg",
   "static/css/main.a22afb00.chunk.css.map": "/abz.agency/static/css/main.a22afb00.chunk.css.map",
   "index.html": "/abz.agency/index.html",
-  "precache-manifest.67f630c88e970d78170b643e04c6ff1b.js": "/abz.agency/precache-manifest.67f630c88e970d78170b643e04c6ff1b.js",
+  "precache-manifest.f1eec15b955dc1735abe8ce45b490dfe.js": "/abz.agency/precache-manifest.f1eec15b955dc1735abe8ce45b490dfe.js",
   "service-worker.js": "/abz.agency/service-worker.js"
 }
